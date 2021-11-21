@@ -59,17 +59,15 @@ public class Client {
             String ip=data[0];
             int port=Integer.parseInt(data[1]);
             if (!isConnect) {
-                while (true) {
                     try {
                         Socket socket = new Socket(ip, port);
                         connection = new Connection(socket);
                         isConnect = true;
                         System.out.println("Вы подключились к серверу.");
-                        break;
+
                     } catch (Exception e) {
                         System.out.println("Произошла ошибка! Возможно Вы ввели не верный адрес сервера или порт. Попробуйте еще раз");
                     }
-                }
             }
         }
 
